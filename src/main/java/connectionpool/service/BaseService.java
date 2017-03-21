@@ -9,7 +9,7 @@ import java.util.List;
  * Created by sudhirkumar on 3/12/17.
  */
 public class BaseService {
-    private MongoClient mongoClient = new MongoClient();
+    private MongoClient mongoClient;
     private String jsonData;
     private String collection;
     private DB database;
@@ -17,6 +17,12 @@ public class BaseService {
     BaseService(String jsonData, String collection) {
         this.jsonData = jsonData;
         this.collection = collection;
+        mongoClient = getMongoClient();
+        System.out.println("test");
+    }
+
+    private MongoClient getMongoClient() {
+        return new MongoClient();
     }
     /*
         public void setUp()

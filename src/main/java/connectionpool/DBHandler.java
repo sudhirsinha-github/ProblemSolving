@@ -12,7 +12,7 @@ public class DBHandler {
         connection.setHost("localhost");
         connection.setPortNo(27017);
 
-        DBConnection dbConnection = new CECMongoClient();
+        DBConnection dbConnection = new CECMongoClientImpl();
         dbConnection.connect(connection);
     }
 }
