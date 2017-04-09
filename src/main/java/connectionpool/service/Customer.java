@@ -8,7 +8,7 @@ import org.json.simple.JSONObject;
  */
 public class Customer extends BaseService {
     public Customer() {
-        super(getCustomerJson(), "TestCustomer");
+        super();
     }
 
     private static String getCustomerJson() {

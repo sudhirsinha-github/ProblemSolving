@@ -7,6 +7,6 @@ import com.mongodb.DB;
  */
 public class UserService extends BaseService {
     public UserService(String documentName, String collection) {
-        super("User","TestUser");
+        super();
     }
 }

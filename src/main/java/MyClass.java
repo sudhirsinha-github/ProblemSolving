@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
-
+import org.apache.commons.lang3.*;
 /**
  * Created by sudhirkumar on 2/27/17.
  */
@@ -32,7 +32,12 @@ public class MyClass implements DefaultInterface {
 
         Random random = new Random();
         random.ints().limit(10).forEach(System.out::println);
+/*
+        System.out.println("(*****");
 
+        String characters = "ZXCVBNMASDFGHJKLPOIUYTREWQzxcvbnmasdfghjklqwertyuiop1234567890!@#*&";
+        String pwd = RandomStringUtils.random( 15, characters );
+        System.out.println( pwd );*/
     }
 }
 

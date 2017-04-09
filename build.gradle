@@ -13,6 +13,9 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
     compile group: 'org.mongodb', name: 'mongo-java-driver', version: '3.4.2'
     compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
+    compile group: 'com.google.inject', name: 'guice', version: '4.1.0'
+
     testCompile 'org.mockito:mockito-core:1.10.19'
     testCompile "org.powermock:powermock-mockito-release-full:1.6.4"
 }
