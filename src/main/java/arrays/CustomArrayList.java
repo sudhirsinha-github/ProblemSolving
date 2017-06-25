@@ -52,7 +52,8 @@ public class CustomArrayList<E>{
      * @param e
      */
     public boolean add(E e) {
-        ensureCapacity(size + 1);
+      int i  =  ensureCapacity(size + 1);
+      System.out.println("@@@@@@@@@@    "+ i);
         customArrayListElementData[size++] = e;
         return true;
     }
@@ -84,7 +85,8 @@ public class CustomArrayList<E>{
      * @param element
      */
     public void add(int index, E element) {
-        ensureCapacity(size + 1);
+        int i =ensureCapacity(size + 1);
+        System.out.println("@@@@@@@@@@@@@@@@@     "+i);
         System.arraycopy(customArrayListElementData, index, customArrayListElementData, index + 1,size - index);
         customArrayListElementData[index] = element;
         size++;
@@ -128,13 +130,14 @@ public class CustomArrayList<E>{
      * growCustomArrayList(minCapacity);
      * @param minCapacity
      */
-    private void ensureCapacity(int minCapacity) {
+    private int ensureCapacity(int minCapacity) {
         if (customArrayListElementData == EMPTY_ELEMENT_DATA) {
             minCapacity = Math.max(DEFAULT_INITIAL_CAPACITY, minCapacity);
         }
 
         if (minCapacity - customArrayListElementData.length > 0)
             growCustomArrayList(minCapacity);
+        return minCapacity;
     }
     /**
      * main method to test the custome array list

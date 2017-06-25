@@ -25,7 +25,7 @@ public class CustomHashMap<K, V> {
 
         Entry<K, V> entry = bucket[bucketIndexOfKey(key)];
         while (entry != null && !key.equals(entry.getKey()))
-            entry = entry.getNext();
+            entry = entry.getNext(); // goto next node like linked list..
 
         return entry.getVal();
     }
@@ -34,7 +34,7 @@ public class CustomHashMap<K, V> {
     {
         CheckKeyNull(key);
 
-        Entry<K, V> newEntry = bucket[bucketIndexOfKey(key)];
+        Entry<K, V> newEntry = bucket[bucketIndexOfKey(key)]; //get the index of bucket array.. if it contains item?
 
         if(null != newEntry) {
 
@@ -67,7 +67,11 @@ public class CustomHashMap<K, V> {
     }
 
     private int bucketIndexOfKey(K key) {
-        return key.hashCode() % bucket.length;
+        return hashFunction(key.hashCode());
+    }
+
+    private int hashFunction(int keyhashCode) {
+        return keyhashCode % bucket.length;
     }
 
 }

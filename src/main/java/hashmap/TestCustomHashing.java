@@ -30,6 +30,11 @@ public class TestCustomHashing {
     @Test
     public void overWriteValue() {
         CustomHashMap<Integer, String> map = new CustomHashMap<Integer, String>();
+        map.putValue(1, "OLD D1");
+        map.putValue(11, "Moon");
+        System.out.println(map.getVal(1));
+        System.out.println(map.getVal(11));
+
         map.putValue(42, "OLD D1");
         assertEquals("OLD D1", map.getVal(42));
 

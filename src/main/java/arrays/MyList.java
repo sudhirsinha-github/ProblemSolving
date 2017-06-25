@@ -22,7 +22,10 @@ public class MyList<T> {
 
 
     private void ensureCapa() {
-        int newSize = elements.length * 2;
+        //Vector defaults to doubling the size of its array
+        // while the ArrayList increases its array size by 50 percent.
+        int newSize = (int) (elements.length * 1.5);
+        System.out.println(newSize);
         elements = Arrays.copyOf(elements, newSize);
     }
 
@@ -35,10 +38,12 @@ public class MyList<T> {
     }
 
     public static void main(String[] args) {
-        MyList<Object> list = new MyList<>(7);
+        MyList<Object> list = new MyList<>(2);
         list.add(99);
         list.add("kkkk");
         list.add("iii");
+        list.add("www");
+        list.add("qqqq");
 
         System.out.println(list.get(0));
     }

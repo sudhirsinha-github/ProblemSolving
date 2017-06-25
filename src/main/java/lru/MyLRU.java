@@ -27,6 +27,7 @@ public class MyLRU {
     int getFreshValue(int x)
     {
         //x = x + 2;
+        // do some computation ...
         return x;
     }
 
@@ -52,6 +53,7 @@ public class MyLRU {
             }
 
             lru.getValue(i);
+            lru.getValue(i*10);
             System.out.println(lru.map);
         }
     }
