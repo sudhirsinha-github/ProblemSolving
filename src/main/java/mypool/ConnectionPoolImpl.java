@@ -85,7 +85,6 @@ import java.util.concurrent.BlockingQueue;
     }
 }
 
-class Main{
 
     public static void main(String[] args) throws InterruptedException,IOException {
         ConnectionPoolFactory factory = new ConnectionPoolFactory();

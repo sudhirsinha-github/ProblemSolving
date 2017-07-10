@@ -2,8 +2,9 @@ package arrays;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
-public class MyList<T> {
+public class MyList<T>{
     private int size = 0;
     private static final int DEFAULT_CAPACITY = 10;
     private Object elements[];

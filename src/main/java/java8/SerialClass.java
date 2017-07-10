@@ -7,7 +7,7 @@ public class SerialClass extends Employee implements Serializable  {
     private Date currentTime;
     private static int i;
 
-    private static long serialVersionUID = 719625691177501L;
+   private static long serialVersionUID = 719625691177501L;
 
     public SerialClass() {
         currentTime = Calendar.getInstance().getTime();

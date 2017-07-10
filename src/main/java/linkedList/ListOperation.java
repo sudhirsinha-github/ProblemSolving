@@ -46,7 +46,7 @@ public class ListOperation{
 
     public static void main(String[] args) {
         ListOperation listOperation = new ListOperation();
-        MyList head = listOperation.createList(false);
+        MyList head = listOperation.createList(true);
 
         // Find length of LL
          // int length = findLengthOfLL(head);
@@ -55,7 +55,7 @@ public class ListOperation{
         //findTheMiddleOfList(head, length);
 
         //Find loop in Linked List and corect it
-        // correctLoop(head);
+         correctLoop(head);
 
         //reverse the linked list
         MyList curr = head;
@@ -80,7 +80,7 @@ public class ListOperation{
     private static void correctLoop(MyList head) {
         MyList first =head;
         MyList curr = head.next.next;
-        MyList prev = null;
+        MyList prev = head;
         int pos = 1;
         while (curr.next != null)
         {

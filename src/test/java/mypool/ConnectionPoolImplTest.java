@@ -12,13 +12,14 @@ import static org.junit.Assert.*;
  */
 public class ConnectionPoolImplTest {
 
-
+    ConnectionPoolFactory factory =null;
+    ConnectionPool pool = null;
 
     @Before
     public void setUpConnectionPool() throws InterruptedException
     {
-
-
+        factory = new ConnectionPoolFactory();
+        pool = factory.getConnectionPool(4);
     }
 
 
@@ -26,16 +27,13 @@ public class ConnectionPoolImplTest {
     public void getConnPoolOnALLUSEIntegrationTest() throws InterruptedException{
 
 
-        ConnectionPoolFactory factory =null;
-        ConnectionPool pool = null;
         MongoClient client1 = null;
         MongoClient client2 = null;
         MongoClient client3 = null;
         MongoClient client4 = null;
         MongoClient client5 = null;
 
-        factory = new ConnectionPoolFactory();
-        pool = factory.getConnectionPool(4);
+
         client1 = pool.getConnection();
         client2 = pool.getConnection();
         client3 = pool.getConnection();

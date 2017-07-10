@@ -2,9 +2,7 @@ package prac;
 
 import sun.jvm.hotspot.oops.Array;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.*;
 
 /**
  * Created by sudhirkumar on 4/18/17.
@@ -131,7 +129,7 @@ public class MajorItem {
     }
 
 
-    public static void main(String[] args) {
+    public static void mainP(String[] args) {
         int length = 4;
         int[] arr = new int[]{3, 4, 1, 0}; // 455-1
 
@@ -174,6 +172,14 @@ public class MajorItem {
         for (int a:al) {
             System.out.println(a);
         }
+
+    }
+
+    public static void main(String[] args) {
+        Set<Integer> set = new HashSet<>();
+        set.add(12);
+        set.add(12);
+
 
     }
 }

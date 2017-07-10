@@ -41,19 +41,27 @@ public class MyLRU {
         result = getFreshValue(x);
         }
 
+        /*if(map.containsKey(x)){
+            map.remove(x);
+        }*/
+
         map.put(x, result);
+
         return result;
     }
 
     public static void main(String[] args) {
         MyLRU lru = new MyLRU();
-        for (int i = 1; i <= 5; i++) {
-            if(i > 2){
+        int a[] = {2,1,3,0,1,2,3};
+
+        for (int i = 0; i < a.length; i++) {
+            if(i > 0){
                 lru.getValue( 1);
             }
 
-            lru.getValue(i);
-            lru.getValue(i*10);
+            /*lru.getValue(i);
+            lru.getValue(i*10);*/
+            lru.getValue(a[i]);
             System.out.println(lru.map);
         }
     }
