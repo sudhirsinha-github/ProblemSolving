@@ -12,8 +12,8 @@ import static org.junit.Assert.*;
  * Created by sudhirkumar on 9/19/17.
  */
 public class ConsoleLoggerTest {
-    AbstractLogger logger = new ConsoleLogger(1);
-    AbstractLogger fileLogger = new FileLogger(3);
+    AbstractLogger logger = LoggerFactory.getLogger("CONSOLE");
+    AbstractLogger fileLogger = LoggerFactory.getLogger("Next");
 
     @Before
     public void getLoggerChain() {
