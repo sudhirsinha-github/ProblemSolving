@@ -1,8 +1,8 @@
 package prac;
 
-import sun.jvm.hotspot.oops.Array;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by sudhirkumar on 4/18/17.

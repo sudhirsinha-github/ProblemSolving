@@ -23,12 +23,12 @@ public class MyClass implements DefaultInterface {
     public static void main(String[] args)
     {
        /* MyClass myClass = new MyClass();
-        myClass.myCall();
+        myclass.mycall();
         myClass.run();*/
 
         List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
         List<String> filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
-                //.collect(Collectors.toList());
+                //.collect(collectors.tolist());
 
         Random random = new Random();
         random.ints().limit(10).forEach(System.out::println);
@@ -38,6 +38,13 @@ public class MyClass implements DefaultInterface {
         String characters = "ZXCVBNMASDFGHJKLPOIUYTREWQzxcvbnmasdfghjklqwertyuiop1234567890!@#*&";
         String pwd = RandomStringUtils.random( 15, characters );
         System.out.println( pwd );*/
+
+
+
+        String validateUrl = String.format("%s%s?%s", "test",
+                "/v3/api/auth/validateToken","ccc");
+        System.out.println(validateUrl);
+
     }
 }
 

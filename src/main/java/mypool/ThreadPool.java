@@ -5,9 +5,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.LinkedBlockingQueue;
 
-/**
- * Created by sudhirkumar on 5/29/17.
- */
 public class ThreadPool{
 
     private final int threadCount;
@@ -29,9 +26,13 @@ public class ThreadPool{
 
     public void execute(Runnable task) throws InterruptedException {
         synchronized (taskQueue) {
-            /*boolean isInserted = */taskQueue.put(task);
-            System.out.println("Thread ADDing to Queue ...!!" + Thread.currentThread().getId() + " *** Queue Length -- >" + taskQueue.size()
+            /*boolean isInserted = */
+            taskQueue.put(task);
+
+            System.out.println("Thread added to Queue ...!!" + Thread.currentThread().getId() + " *** Queue Length -- >"
+                            + taskQueue.size()
                     /*+ " is Inserted ..." + isInserted*/);
+
             taskQueue.notify();
         }
     }

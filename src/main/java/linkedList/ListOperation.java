@@ -1,5 +1,10 @@
 package linkedList;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class ListOperation{
     public MyList createList(boolean loop) {
         MyList list0 = new MyList();
@@ -11,7 +16,7 @@ public class ListOperation{
 
 
         MyList list2 = new MyList();
-        list2.data = 14;
+        list2.data = 12;
         list1.next = list2;
 
 
@@ -46,7 +51,7 @@ public class ListOperation{
 
     public static void main(String[] args) {
         ListOperation listOperation = new ListOperation();
-        MyList head = listOperation.createList(true);
+        MyList head = listOperation.createList(false);
 
         // Find length of LL
          // int length = findLengthOfLL(head);
@@ -55,26 +60,103 @@ public class ListOperation{
         //findTheMiddleOfList(head, length);
 
         //Find loop in Linked List and corect it
-         correctLoop(head);
+        // correctLoop(head);
 
         //reverse the linked list
-        MyList curr = head;
-        MyList prev = null;
-        MyList next = null;
-        while (curr != null){
-            next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
-        }
+                /*MyList curr = head;
+                MyList prev = null;
+                MyList next = null;
+                while (curr != null){
+                    next = curr.next;
+                    curr.next = prev;
+                    prev = curr;
+                    curr = next;
+                }
 
-        curr = prev;
+                curr = prev;
+                while (curr != null){
+                    System.out.println(curr.data);
+                    curr = curr.next;
+                }*/
+
+        //displayStarTri();
+
+        //delete Duplicate nodes in Linked list
+        MyList curr = deleteDuplicates(head);
+
         while (curr != null){
             System.out.println(curr.data);
             curr = curr.next;
         }
 
-        //displayStarTri();
+        int n[] = {1,2,2};
+        System.out.println(removeDuplicates(n));
+    }
+
+    public static int removeDuplicates(int[] nums) {
+
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        int count = 0;
+        for(int i=0;i< nums.length; i++)
+        {
+            if(arrayList.contains(nums[i]) && count >= 2) {
+                count =0;
+                if(i <nums.length-1 && nums[i] == nums[i+1])
+                    i++;
+
+                continue;
+            }
+
+            if(arrayList.contains(nums[i])) {
+                arrayList.add(nums[i]);
+                count++;
+            }
+            else {
+                arrayList.add(nums[i]);
+                count++;
+            }
+        }
+
+        int no[] = new int[arrayList.toArray().length];
+        int r =0;
+        for (Integer i:arrayList) {
+            no[r++] = i.intValue();
+        }
+
+        nums = no;
+        System.out.println(nums.length);
+        for (int n1:nums) {
+            System.out.println(n1);
+        }
+
+
+        return nums.length;
+    }
+
+
+    public static MyList deleteDuplicates(MyList head) {
+        MyList curr = head;
+
+        MyList prev = curr;
+
+        while(prev.next != null && prev.next.next != null)
+        {
+            if(prev.next.data == prev.next.next.data){
+                int dup = prev.next.data;
+
+                while(prev.next != null && prev.next.data == dup)
+                {
+                    prev.next = prev.next.next;
+                }
+            }
+            else{
+                prev = prev.next;
+            }
+        }
+
+
+        return curr;
+
     }
 
     private static void correctLoop(MyList head) {

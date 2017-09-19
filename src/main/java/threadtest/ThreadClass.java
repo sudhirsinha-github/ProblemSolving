@@ -1,12 +1,5 @@
 package threadtest;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.concurrent.ThreadPoolExecutor;
-
-/**
- * Created by sudhirkumar on 6/7/17.
- */
 public class ThreadClass {
     //public volatile static ArrayList<Integer> array = new ArrayList<>();
 

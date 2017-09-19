@@ -38,18 +38,31 @@ public class ExpressionValidator {
 
 
     public static void main(String[] args) {
-        String expression ="[(a+b){c]";
+        String expression ="{}}}{}";
         char[] character = expression.toCharArray();
 
-        boolean flag = true;
+        boolean flag = false;
         for (char ch:character) {
             if(ch == '{' || ch == '[' || ch == '(') {
                 pushToStack (ch);
             }
 
             if(ch == '}' || ch == ']' || ch == ')') {
-                flag = isMatchingBracket(popFromStack(), ch);
+                if(!stack.isEmpty()) {
+                    flag = isMatchingBracket(popFromStack(), ch);
+                }
+                else {
+                    flag = false;
+                    break;
+                }
             }
+
+        }
+
+        if(!stack.isEmpty())
+        {
+            flag = false;
+            stack.clear();
         }
 
         System.out.println(flag);

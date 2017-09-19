@@ -5,12 +5,9 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-/**
- * Created by sudhirkumar on 5/7/17.
- */
+
 public class StrOpern {
     static boolean isAnagram(String a, String b) {
-        // Complete the function
         // if both have different lenth return false
         if(a.length() != b.length()) return false;
 
