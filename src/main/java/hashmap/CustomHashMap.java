@@ -1,8 +1,5 @@
 package hashmap;
 
-/**
- * Created by sudhirkumar on 4/9/17.
- */
 public class CustomHashMap<K, V> {
     private int DEFAULT_BUCKET_SIZE = 10;
     private Entry<K, V>[] bucket;
@@ -67,11 +64,11 @@ public class CustomHashMap<K, V> {
     }
 
     private int bucketIndexOfKey(K key) {
-        return hashFunction(key.hashCode());
+        return key.hashCode() % bucket.length;
     }
 
-    private int hashFunction(int keyhashCode) {
-        return keyhashCode % bucket.length;
-    }
+//    private int hashFunction(int keyhashCode) {
+//        return keyhashCode % bucket.length;
+//    }
 
 }

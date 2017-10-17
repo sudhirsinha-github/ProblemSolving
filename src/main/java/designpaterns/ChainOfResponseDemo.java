@@ -10,7 +10,7 @@ import java.util.*;
 
 // Chain of Respo ...
 abstract class Approver {
-    Approver nextApprover;
+    protected Approver nextApprover;
 
     abstract void processClaimsRequest(int amount);
 

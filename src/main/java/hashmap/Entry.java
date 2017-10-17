@@ -1,14 +1,13 @@
 package hashmap;
 
 /**
- * Created by sudhirkumar on 4/9/17.
- * Let’s create an Entry class. We need a FINAL key, which can’t be changed,
- * a value, which can change,
+ * Let’s create an Entry class. We need a FINAL key, which can’t be changed, >>only getter
+ * a value, which can change,- setter <<
  * and a pointer to next so we can make our array that has 0..N entries in each spot.LEAKY_BUCKET (list)
  */
 public class Entry<K,V> {
     private Entry<K, V> next;
-    private final K key; // reason bieng need to set in CTOR 1c
+    private final K key; // reason being need to set in CTOR 1c
     private V val;
 
     public Entry(K key, V val) {

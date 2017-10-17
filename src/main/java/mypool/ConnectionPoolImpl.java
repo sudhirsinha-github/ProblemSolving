@@ -59,6 +59,7 @@ import java.util.concurrent.BlockingQueue;
     @Override
     public void releaseConnection(MongoClient client) throws InterruptedException{
         System.out.println("size before releasing connection" + blockingQueue.size());
+
         blockingQueue.put(client);
         System.out.println("size after releasing connection" + blockingQueue.size());
     }

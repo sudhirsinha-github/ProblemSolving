@@ -20,13 +20,22 @@ public class Twitter {
             time = timeStamp++;
             next = null;
         }
+
+        public void setMessage(String message) {
+            if(message.length() >140)
+                throw new RuntimeException("Invalid length");
+
+            this.message = message;
+        }
+
+        private String message;
     }
 
 
     // OO design so User can follow, unfollow and post itself
     public class User {
         public int id;
-        public Set<Integer> followed;
+        public Set<Integer> followed; //NOT LIST COZ I WANT unique users only added
         public Tweet tweet_head;
 
         public User(int id) {

@@ -20,7 +20,7 @@ public class MyClass implements DefaultInterface {
     }*/
 
 
-    public static void main(String[] args)
+    public static void main1(String[] args)
     {
        /* MyClass myClass = new MyClass();
         myclass.mycall();
@@ -46,6 +46,20 @@ public class MyClass implements DefaultInterface {
         System.out.println(validateUrl);
 
     }
+
+
+    public static void main(String[] args) {
+
+        String test ="yutyuty";
+
+        Thread t = new Thread(()->{
+            System.out.println("Hi..." + test);});
+
+        Thread t2 = new Thread(()->{
+            System.out.println("Hi..." + test);});
+    }
+
+
 }
 
 

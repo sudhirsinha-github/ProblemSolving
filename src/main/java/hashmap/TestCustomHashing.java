@@ -14,7 +14,7 @@ public class TestCustomHashing {
 
     @Test
     public void readWriteSimpleValue() {
-        CustomHashMap<String, Duck> map = new CustomHashMap<String, Duck>();
+        CustomHashMap<String, Duck> map = new CustomHashMap<String, Duck>();http://gadgets.ndtv.com/internet/news/apple-secret-job-posting-looks-for-talented-engineer-1739976
         map.putValue("duck", new Duck("duck",2));
         map.putValue("goose", new Duck("goose",4));
         assertEquals(2, map.getVal("duck").getWeight());
