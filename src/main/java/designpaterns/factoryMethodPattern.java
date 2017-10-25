@@ -54,7 +54,9 @@ class InstitutionalPlan extends Plan {
             rate = 5.50;
       }
 
-
+      public int newii(){
+            return  88;
+      }
 }
 
 class GetPlanFactory {
@@ -62,6 +64,8 @@ class GetPlanFactory {
       // use getPlan method to get object of type Plan
       public Plan getPlan(String planType) {
             if (planType == null) {
+//                  Plan plan = new InstitutionalPlan();
+//                  (InstitutionalPlan)plan.newii(); // can't be resolved Y ?
                   return null;
             }
             if (planType.equalsIgnoreCase("DOMESTICPLAN")) {
