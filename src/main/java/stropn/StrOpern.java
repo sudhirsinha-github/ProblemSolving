@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class StrOpern {
     static boolean isAnagram(String a, String b) {
-        // if both have different lenth return false
+        // if both have different length return false
         if(a.length() != b.length()) return false;
 
         String firstOne = a.toUpperCase();
@@ -68,6 +68,14 @@ public class StrOpern {
     }
 
     public static void main(String[] args) {
+
+        String app1 = new String("app1");
+        String app2 = new String("app1");
+        System.out.println(app1 == app2);
+
+        String app11 = new String("app1");
+        String app21 = "app1";
+        System.out.println(app11==app21);
 
         Scanner scan = new Scanner(System.in);
         String a = scan.next();

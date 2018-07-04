@@ -2,7 +2,7 @@ package hashmap;
 
 public class CustomHashMap<K, V> {
     private int DEFAULT_BUCKET_SIZE = 10;
-    private Entry<K, V>[] bucket;
+    private final Entry<K, V>[] bucket;
 
     public CustomHashMap() {
         this.bucket = new Entry[DEFAULT_BUCKET_SIZE];

@@ -1,6 +1,6 @@
 //package mypool;
 //
-//import org.junit.Test;
+//import org.junit.Main;
 //import org.junit.runner.RunWith;
 //import org.mockito.Mockito;
 //import org.powermock.api.mockito.PowerMockito;
@@ -18,7 +18,7 @@
 //    private CustomArrayList<String> testInstance = PowerMockito.spy(new CustomArrayList<>());
 //
 //
-//    @Test
+//    @Main
 //    public void testAddUseCase(){
 //
 //

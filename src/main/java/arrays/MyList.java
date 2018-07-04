@@ -19,11 +19,11 @@ public class MyList<T> implements Serializable{
         elements = new Object[capacity];
     }
 
-    public void add(T e) {
+    public void add(T item) {
         if (size == elements.length) {
             ensureCapa();
         }
-        elements[size++] = e;
+        elements[size++] = item;
     }
 
     public void addAll(T[] e) {
@@ -41,7 +41,9 @@ public class MyList<T> implements Serializable{
             return;
         if(index  <0 && index > getSize())
             throw new ArrayIndexOutOfBoundsException();
+        System.out.println(size +"--" + index);
         int newVal = size - index -1 ;
+
         System.arraycopy(elements, index+1, elements, index, newVal);
         elements[--size] = null;
     }
@@ -50,7 +52,7 @@ public class MyList<T> implements Serializable{
         if(getSize() == 0)
             return;
 
-        elements = new Object[size];
+        elements = new Object[size]; // since we need a new brand array
     }
 
     public int getSize()
@@ -59,7 +61,7 @@ public class MyList<T> implements Serializable{
     }
 
     private void ensureCapa() {
-        //Vector defaults to doubling the size of its array
+        //ArrayList defaults to doubling the size of its array
         // while the ArrayList increases its array size by 50 percent.
         int newSize = (int) (elements.length * 1.5);
         System.out.println("###"+ newSize);
@@ -86,7 +88,7 @@ public class MyList<T> implements Serializable{
        String[] arrayList = new String[]{"sss","wwwws"};
         list.addAll(arrayList);
         System.out.println(list.get(1) +" "+ list.getSize());
-        list.remove(1);
+        list.remove(2);
         System.out.println(list.get(1) +" "+ list.size);
 
     }

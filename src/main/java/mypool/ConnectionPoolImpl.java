@@ -6,6 +6,7 @@ import com.mongodb.MongoClientOptions;
 
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.Scanner;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
@@ -98,8 +99,11 @@ class Main{
         MongoClient client4 = null;
         MongoClient client5 = null;
 
+
+
             client1 = pool.getConnection();
             client2 = pool.getConnection();
+            Thread.sleep(4567890987L);
             client3 = pool.getConnection();
             client4 = pool.getConnection();
             System.out.println(pool.getAvailableConnections());
@@ -110,12 +114,32 @@ class Main{
             pool.releaseConnection(client4);
             System.out.println(pool.getAvailableConnections());
 
-            pool.close();
-              /* client1 = pool.getConnection();
-        pool.close();*/
+           // pool.close();
+/*
+
+        Scanner s = new Scanner(System.in);
+        int N1 = s.nextInt();
+        int N2 = s.nextInt();
+        int count = 1;
+
+        int max = N1>N2 ? N1:N2;
+        for(int i = 2; i< max;i++){
+            if(N1%i ==0 && N2%i ==0)
+            {
+
+                count++;
+            }
+
+        }
+
+        System.out.println(count);
+
+               client1 = pool.getConnection();
+        pool.close();
 
 
-        /*} catch (Exception e) {
+
+        } catch (Exception e) {
             System.out.println("Error occured >>> " + e);
         } finally {
             try {

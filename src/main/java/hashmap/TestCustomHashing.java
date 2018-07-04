@@ -24,7 +24,7 @@ public class TestCustomHashing {
     @Test(expected = NullPointerException.class)
     public void getSomethingThatIsntThere(){
         CustomHashMap<Integer, String> map = new CustomHashMap<Integer, String>();
-        assertEquals(null, map.getVal(42));
+        assertEquals(null, map.getVal(412));
     }
 
     @Test

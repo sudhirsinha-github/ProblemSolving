@@ -51,7 +51,7 @@ public class ListOperation{
 
     public static void main(String[] args) {
         ListOperation listOperation = new ListOperation();
-        MyList head = listOperation.createList(false);
+        MyList head = listOperation.createList(true);
 
         // Find length of LL
          // int length = findLengthOfLL(head);
@@ -60,7 +60,7 @@ public class ListOperation{
         //findTheMiddleOfList(head, length);
 
         //Find loop in Linked List and corect it
-        // correctLoop(head);
+        correctLoop(head);
 
         //reverse the linked list
                 /*MyList curr = head;
@@ -84,13 +84,14 @@ public class ListOperation{
         //delete Duplicate nodes in Linked list
         MyList curr = deleteDuplicates(head);
 
+        System.out.println(">>>");
         while (curr != null){
             System.out.println(curr.data);
             curr = curr.next;
         }
 
-        int n[] = {1,2,2};
-        System.out.println(removeDuplicates(n));
+        /*int n[] = {1,2,2};
+        System.out.println(removeDuplicates(n));*/
     }
 
     public static int removeDuplicates(int[] nums) {
@@ -160,22 +161,22 @@ public class ListOperation{
     }
 
     private static void correctLoop(MyList head) {
-        MyList first =head;
-        MyList curr = head.next.next;
+        MyList slow =head;
+        MyList fast = head.next.next;
         MyList prev = head;
         int pos = 1;
-        while (curr.next != null)
+        while (fast.next != null)
         {
-            first = first.next;
+            slow = slow.next;
             pos++;
-            if(first == curr) {
-                System.out.println("Loop found ..node .. @" + curr.data);
+            if(slow == fast) {
+                System.out.println("Loop found ..node .. @" + fast.data);
                 prev.next = null;
-                break;
+               // break;
             }
 
-            prev = curr.next;
-            curr = curr.next.next;
+            prev = fast.next;
+            fast = fast.next.next;
 
         }
 

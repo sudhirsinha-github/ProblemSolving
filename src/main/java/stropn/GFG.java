@@ -39,7 +39,7 @@ class GFG
 
     public static void main(String[] args) {
         //encode("testss");
-        encode2("testwwt");
+        encode("testwwt");
 
     }
 

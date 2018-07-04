@@ -14,9 +14,9 @@ public class LoggerClient {
 
 
        FileLogger logger = new FileLogger();
-            logger.logMessage(Level.Warn, "Test -"+ Calendar.getInstance().getTime().getTime());
-            logger.logMessage(Level.Warn, "Test -----"+ Calendar.getInstance().getTime().getTime() );
-            logger.logMessage(Level.Warn, "Test --------"+ Calendar.getInstance().getTime().getTime() );
+            logger.logMessage(Level.Warn, "Main -"+ Calendar.getInstance().getTime().getTime());
+            logger.logMessage(Level.Warn, "Main -----"+ Calendar.getInstance().getTime().getTime() );
+            logger.logMessage(Level.Warn, "Main --------"+ Calendar.getInstance().getTime().getTime() );
 
             logger.close();
     }

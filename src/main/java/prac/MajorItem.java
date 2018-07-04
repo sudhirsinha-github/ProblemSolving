@@ -8,7 +8,7 @@ import java.util.Set;
  * Created by sudhirkumar on 4/18/17.
  */
 public class MajorItem {
-   /* private static int count = 0;
+    private static int count = 1;
 
     public static void main(String[] args) {
         int[] arr = new int[]{1,2,3,5,3,3,2,2,2,2,2,2};
@@ -50,7 +50,7 @@ public class MajorItem {
 
     private static boolean isEven(int i) {
         return i%2 == 0;
-    }*/
+    }
 
     public static void mainSubstr(String[] args) {
         String mainStringData = "HI how are your doing?";
@@ -175,11 +175,4 @@ public class MajorItem {
 
     }
 
-    public static void main(String[] args) {
-        Set<Integer> set = new HashSet<>();
-        set.add(12);
-        set.add(12);
-
-
-    }
 }

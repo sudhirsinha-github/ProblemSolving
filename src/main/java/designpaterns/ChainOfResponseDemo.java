@@ -1,29 +1,20 @@
 package designpaterns;
 
-import com.sun.org.apache.bcel.internal.generic.ARRAYLENGTH;
-
-import java.util.*;
-
-/**
- * Created by sudhirkumar on 9/18/17.
- */
-
 // Chain of Respo ...
 abstract class Approver {
     protected Approver nextApprover;
 
-    abstract void processClaimsRequest(int amount);
+    abstract void processBussinessClaimsRequest(int amount);
 
     public void setNextApprover(Approver approver) {
         nextApprover = approver;
     }
 }
 
-
 class Manager extends Approver{
 
     @Override
-    void processClaimsRequest(int amount) {
+    void processBussinessClaimsRequest(int amount) {
         if(amount>0 & amount < 1000)
         {
             System.out.println("Processed by manager!!!" + amount);
@@ -31,7 +22,7 @@ class Manager extends Approver{
         else if(nextApprover != null)
         {
             System.out.println("Will pass ticket to nextApprover - " + nextApprover);
-            nextApprover.processClaimsRequest(amount);
+            nextApprover.processBussinessClaimsRequest(amount);
         }
     }
 }
@@ -39,7 +30,7 @@ class Manager extends Approver{
 class Director extends Approver{
 
     @Override
-    void processClaimsRequest(int amount) {
+    void processBussinessClaimsRequest(int amount) {
         if(amount>1000 & amount <10000)
         {
             System.out.println("Processed by Director!!!" + amount);
@@ -47,34 +38,34 @@ class Director extends Approver{
         else if(nextApprover != null)
         {
             System.out.println("Will pass ticket to nextApprover - " + nextApprover);
-            nextApprover.processClaimsRequest(amount);
+            nextApprover.processBussinessClaimsRequest(amount);
         }
     }
 }
 
-class President extends Approver{
+class SeniorDirector extends Approver{
 
     @Override
-    void processClaimsRequest(int amount) {
-        if(amount>10000 & amount < 200000)
+    void processBussinessClaimsRequest(int amount) {
+        if(amount>=10000 & amount < 200000)
         {
-            System.out.println("Processed by President!!!" + amount);
+            System.out.println("Processed by SeniorDirector!!!" + amount);
         }
         else
         {
             System.out.println("Will pass ticket to nextApprover - " + nextApprover);
-            System.out.println("Schedule a meeting with President!!");
+            System.out.println("Schedule a meeting with CEO !!");
         }
     }
 }
 
 public class ChainOfResponseDemo{
     public static void main(String[] args) {
-        Approver approver = new Manager();
+        Approver manager = new Manager();
         Approver director = new Director();
-        Approver president = new President();
-        approver.setNextApprover(director);
-        director.setNextApprover(president);
-        approver.processClaimsRequest(100000);
+        Approver seniorDirector = new SeniorDirector();
+        manager.setNextApprover(director);
+        director.setNextApprover(seniorDirector);
+        manager.processBussinessClaimsRequest(1000000);
     }
 }

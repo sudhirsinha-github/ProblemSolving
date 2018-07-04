@@ -66,20 +66,22 @@ public class MyLRU {
         return result;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         MyLRU lru = new MyLRU();
         // int a[] = {2,1,3,0,1,2,3};
         int a[] = {7,0,1,2,0,3,0,4,2,3,0,3,2,1,2,0,1,7,0,1};
 
-        for (int i = 0; i < a.length; i++) {
-            /*if(i > 0){
+        for (int i = 0; i < 1111000; i++) {
+/*if(i > 0){
                 lru.getValue( 1);
             }*/
 
             /*lru.getValue(i);
             lru.getValue(i*10);*/
-            lru.getValue(a[i]);
+            lru.getValue(3);
             System.out.println(lru.map);
+
+Thread.sleep(1000);
         }
 
         System.out.println(lru.map);
