@@ -16,11 +16,11 @@ public class LineCount {
 
 
     public static long countLine(String searchWord) {
-
+        Stream<String> lines;
         try {
-            Stream<String> lines = Files.lines(Paths.get("src/main/java/venkat/MyFirst.java"));
+             lines = Files.lines(Paths.get("src/main/java/venkat/MyFirst.java"));
 
-            return lines
+                        return lines
                     .filter(line ->{
                         System.out.println("In lines");
                         return line.contains(searchWord);})

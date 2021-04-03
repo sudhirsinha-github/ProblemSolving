@@ -39,7 +39,7 @@ public class TestMain {
         d.doDerivedPublic();
         d.doDerivedVoid();
         System.out.println("==========================");
-        Base b1 = (Base) new Derived(); // Base == new base
+        Base b1 = new Derived(); // Base == new base
         System.out.println(b1.baseProt);
         System.out.println(b1.basePub );
         b1.doBaseProtected();

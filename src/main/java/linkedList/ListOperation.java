@@ -1,12 +1,18 @@
 package linkedList;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ListOperation{
     public MyList createList(boolean loop) {
+        List l = new LinkedList();
+        l.add("1");
+        l.add("2");
+        l.add("3");
+        l.add("4");
+
+        System.out.println(l.get(3));
+
+
         MyList list0 = new MyList();
         list0.data = 10;
 

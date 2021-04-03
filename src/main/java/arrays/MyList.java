@@ -1,7 +1,7 @@
 package arrays;
 
+
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class MyList<T> implements Serializable{
@@ -90,6 +90,5 @@ public class MyList<T> implements Serializable{
         System.out.println(list.get(1) +" "+ list.getSize());
         list.remove(2);
         System.out.println(list.get(1) +" "+ list.size);
-
     }
 }
