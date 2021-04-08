@@ -1,4 +1,4 @@
-package recursion;
+package recursionNBacktracking;
 
 import static dynamicpg.StringCombinations.swap;
 

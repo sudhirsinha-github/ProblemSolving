@@ -1,4 +1,4 @@
-package recursion;
+package recursionNBacktracking;
 
 public class ReverseLines {
 

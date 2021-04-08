@@ -148,12 +148,12 @@ class PairSum
         int highest,secondhighest;
         highest=secondhighest= Integer.MIN_VALUE;
 
-        for (int i =0; i< a.length; i++)
-        {
-            if(a[i]> highest)
-            {
+        for (int i =0; i< a.length; i++) {
+            if (a[i] > highest) {
                 secondhighest = highest;
                 highest = a[i];
+            } else if (a[i] > secondhighest) {
+                secondhighest = a[i];
             }
         }
 

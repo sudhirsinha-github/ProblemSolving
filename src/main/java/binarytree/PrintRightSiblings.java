@@ -28,7 +28,6 @@ public class PrintRightSiblings {
 
     private static void bfs(Node root, int data) {
         nodeQueue.add(root);
-        int level = 1;
         while (!nodeQueue.isEmpty()) {
 
             Node tempNode = nodeQueue.poll();

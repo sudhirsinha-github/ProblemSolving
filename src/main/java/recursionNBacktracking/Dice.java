@@ -1,9 +1,6 @@
-package recursion;
+package recursionNBacktracking;
 
-import javax.inject.Inject;
-import javax.xml.parsers.DocumentBuilderFactory;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Dice {
 

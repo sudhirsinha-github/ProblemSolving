@@ -1,6 +1,4 @@
-package recursion;
-
-import java.util.regex.Pattern;
+package recursionNBacktracking;
 
 public class StrReverse {
     private static String string = "MELAN";
