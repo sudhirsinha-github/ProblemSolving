@@ -20,6 +20,10 @@ public class GenerateStringsKLength {
         int k = 3;
         String a = "abc";
 
-        binary(a.toCharArray(), "", 3, k);
+        binary(a.toCharArray(), "", a.length(), k);
     }
 }
+
+
+
+

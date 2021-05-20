@@ -2,7 +2,7 @@ package binarytree;
 
 import java.util.HashMap;
 
-class Car {
+public class Car {
     Car() {
         System.out.println("carrr. ..");
     }
