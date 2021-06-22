@@ -1,8 +1,5 @@
 package dynamicpg.cycledetection;
 
-import dynamicpg.cycledetection.DFS;
-import dynamicpg.cycledetection.Vertex;
-
 import java.util.ArrayList;
 import java.util.List;
 

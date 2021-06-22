@@ -1,7 +1,5 @@
 package mypool;
 
-import com.mongodb.MongoClient;
-
 /**
  * Created by sudhirkumar on 4/10/17.
  */

@@ -2,8 +2,6 @@ package bst;
 
 import java.util.HashMap;
 
-import static bst.BinaryTree.preOrderTraversal;
-
 public class BSTVerticalOrder {
 
     static HashMap<Integer, String> integerIntegerHashMap = new HashMap<>();

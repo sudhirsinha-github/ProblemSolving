@@ -6,7 +6,6 @@ import com.mongodb.MongoClientOptions;
 
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.Scanner;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 

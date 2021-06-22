@@ -1,6 +1,7 @@
 package amcat;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.PriorityQueue;
 
 public class MinRoomForLectures {
     public static void main(String[] args) {
@@ -42,5 +43,8 @@ public class MinRoomForLectures {
         }
 
         System.out.println(minPriorityQ.size());
+
+        HashMap<Integer, Integer> integerIntegerHashMap = new HashMap<>();
+
     }
 }

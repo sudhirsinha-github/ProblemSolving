@@ -1,11 +1,10 @@
 package hashmap;
 
 
-import static org.junit.Assert.*;
-import static java.lang.String.format;
-
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
+
+import static java.lang.String.format;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by sudhirkumar on 4/9/17.

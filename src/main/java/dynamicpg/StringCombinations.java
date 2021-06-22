@@ -1,9 +1,5 @@
 package dynamicpg;
 
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-
 public class StringCombinations {
     public static void main(String[] args) {
 

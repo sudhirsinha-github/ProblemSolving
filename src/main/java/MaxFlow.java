@@ -1,7 +1,5 @@
 // Java program for implementation of Ford Fulkerson algorithm
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+
 import java.util.LinkedList;
 
 class MaxFlowQ

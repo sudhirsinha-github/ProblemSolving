@@ -1,7 +1,5 @@
 package linkedList;
 
-import java.util.LinkedList;
-
 /**
  * Created by sudhirkumar on 8/10/17.
  */

@@ -1,6 +1,6 @@
 package sorting;// Radix sort Java implementation
-import java.io.*;
-import java.util.*;
+
+import java.util.Arrays;
  
 class Radix {
  

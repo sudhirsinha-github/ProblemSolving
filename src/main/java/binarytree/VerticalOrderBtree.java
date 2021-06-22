@@ -1,9 +1,8 @@
 package binarytree;// Java program for printing vertical order of a given binary tree
+
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.TreeMap;
-import java.util.Vector; 
-import java.util.Map.Entry; 
+import java.util.Map.Entry;
 
 public class VerticalOrderBtree 
 { 

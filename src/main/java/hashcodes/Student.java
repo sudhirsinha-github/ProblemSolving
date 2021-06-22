@@ -1,7 +1,5 @@
 package hashcodes;
 
-import java.util.Objects;
-
 public class Student {
     String name;
 

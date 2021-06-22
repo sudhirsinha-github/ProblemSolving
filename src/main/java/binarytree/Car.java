@@ -1,7 +1,5 @@
 package binarytree;
 
-import java.util.HashMap;
-
 public class Car {
     Car() {
         System.out.println("carrr. ..");

@@ -1,9 +1,5 @@
 package amcat;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class VillageSeller {
     public static void main(String[] args) {
         int[] a = {1, 2, 3, 4, 9, 8,27};

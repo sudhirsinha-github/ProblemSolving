@@ -1,7 +1,5 @@
 package java8;
 
-import java.util.concurrent.Callable;
-
 /**
  * Created by sudhirkumar on 6/28/17.
  */

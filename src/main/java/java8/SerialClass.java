@@ -1,7 +1,8 @@
 package java8;
 
 import java.io.Serializable;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
 
 public class SerialClass extends Employee implements Serializable  {
     private Date currentTime;

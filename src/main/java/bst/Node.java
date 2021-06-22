@@ -1,9 +1,5 @@
 package bst;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-
 /**
  * Created by sudhirkumar on 6/30/17.
  */

@@ -1,7 +1,5 @@
 package java8;
 
-import org.json.simple.JSONObject;
-
 /**
  * Created by sudhirkumar on 5/31/17.
  */

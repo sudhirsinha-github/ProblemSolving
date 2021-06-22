@@ -2,7 +2,7 @@ package arrays;
 
 
 import java.io.Serializable;
-import java.util.*;
+import java.util.Arrays;
 
 public class MyList<T> implements Serializable{
     //List does not implement Serializable because is it not a key requirement for a list.

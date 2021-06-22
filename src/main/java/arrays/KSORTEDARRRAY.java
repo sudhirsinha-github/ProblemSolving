@@ -13,20 +13,20 @@ public class KSORTEDARRRAY {
 
     static void sort(int[] arr, int k){
 
-        PriorityQueue<Integer> integerPriorityQueue = new PriorityQueue<>(k);
+        PriorityQueue<Integer> minPriorityQueue = new PriorityQueue<>(k);
 
         for (int i = 0; i <= k; i++) {
-            integerPriorityQueue.add(arr[i]);
+            minPriorityQueue.add(arr[i]);
         }
 
         int index = 0;
         for (int i = k+1; i < arr.length; i++) {
-            arr[index++] = integerPriorityQueue.poll();
-            integerPriorityQueue.add(arr[i]);
+            arr[index++] = minPriorityQueue.poll();
+            minPriorityQueue.add(arr[i]);
         }
 
-        while (!integerPriorityQueue.isEmpty()) {
-            arr[index++] = integerPriorityQueue.poll();
+        while (!minPriorityQueue.isEmpty()) {
+            arr[index++] = minPriorityQueue.poll();
         }
 
         Arrays.stream(arr).forEach(r -> System.out.println(r));

@@ -1,8 +1,6 @@
 package April2020;
 
 // { Driver Code Starts
-import java.util.Scanner;
-import java.lang.Math;
 
 class Convert_To_Five {
     public static int $;

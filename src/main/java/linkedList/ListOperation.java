@@ -1,6 +1,8 @@
 package linkedList;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class ListOperation{
     public MyList createList(boolean loop) {

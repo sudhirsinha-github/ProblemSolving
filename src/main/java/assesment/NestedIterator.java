@@ -1,6 +1,5 @@
 package assesment;
 
-import java.sql.Array;
 import java.util.*;
 
 public class NestedIterator implements Iterator<Integer> {
