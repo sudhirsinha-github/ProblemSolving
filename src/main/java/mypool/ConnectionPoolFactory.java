@@ -5,8 +5,7 @@ package mypool;
  */
 public class ConnectionPoolFactory {
 
-    public ConnectionPool getConnectionPool(int size){
-
+    public ConnectionPool getConnectionPool(int size) {
         return new ConnectionPoolImpl(size);
     }
 }

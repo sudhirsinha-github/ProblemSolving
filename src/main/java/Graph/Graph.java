@@ -36,9 +36,9 @@ public class Graph {
         // print(adjacencyList);
 
         boolean[] visited = new boolean[6];
-//        dfs(adjacencyList, 1, visited);
+        dfs(adjacencyList, 1, visited);
 
-        // bfs(adjacencyList, 0, visited);
+         bfs(adjacencyList, 0, visited);
 
         Stack<Integer> integerStack = new Stack<>();
         dfs_topologicalSort(adjacencyList, 0, visited, integerStack);
@@ -63,7 +63,21 @@ public class Graph {
         }
     }
 
-    static void dfs_topologicalSort(ArrayList<ArrayList<Integer>> adjacencyList, int source, boolean[] visited, Stack<Integer> stack) {
+    static int countTreesInForest(ArrayList<ArrayList<Integer>> adjacencyList, int n, boolean[] visited) {
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            if (visited[i] == false) {
+                dfs(adjacencyList, i, visited);
+            }
+
+            count++;
+        }
+
+        return count;
+    }
+
+    static void dfs_topologicalSort(ArrayList<ArrayList<Integer>> adjacencyList, int source,
+                                    boolean[] visited, Stack<Integer> stack) {
         visited[source] = true;
        // System.out.println(" -- " + source);
 
@@ -88,10 +102,10 @@ public class Graph {
             System.out.print("--->>" + data);
             visited[data] = true;
 
-            for (Integer i : adjacencyList.get(data)) {
-                if (visited[i] == false) {
-                    visited[i] = true;
-                    queue.add(i);
+            for (int e : adjacencyList.get(data)) {
+                if (visited[e] == false) {
+                    visited[e] = true;
+                    queue.add(e);
                 }
             }
         }

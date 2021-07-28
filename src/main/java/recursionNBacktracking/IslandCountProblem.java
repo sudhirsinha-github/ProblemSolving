@@ -37,7 +37,7 @@ public class IslandCountProblem {
         return count;
     }
 
-    static int count =0;
+    static int largestIslandCount =0;
     private static int dfs(int[][] grid, int i, int j) {
         // base condition here
         // i can travel up ,down , left and right
@@ -49,16 +49,16 @@ public class IslandCountProblem {
         // don't visit same block again
         // so set current position as 0
         grid[i][j] = 0;
-        count++;
+        largestIslandCount++;
 
-        largest = Math.max(count, largest);
+        largest = Math.max(largestIslandCount, largest);
 
         dfs(grid, i + 1, j);
         dfs(grid, i - 1, j);
         dfs(grid, i, j + 1);
         dfs(grid, i, j - 1);
 
-        count = 0;
+        largestIslandCount = 0;
         return 1;
     }
 

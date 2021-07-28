@@ -1,10 +1,12 @@
 package binarytree;// Java program for printing vertical order of a given binary tree
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
-public class VerticalOrderBtree 
+public class VerticalOrderBtree
 { 
 	// Tree node 
 	static class Node 

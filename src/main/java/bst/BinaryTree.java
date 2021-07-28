@@ -156,7 +156,10 @@ public class BinaryTree {
         if (node == null)
             return -1;
 
-        max = Math.max(node.data, Math.max(maximumOfNodes(node.left, max), maximumOfNodes(node.right, max)));
+        int leftMax = maximumOfNodes(node.left, max);
+        int rightMax = maximumOfNodes(node.right, max);
+
+        max = Math.max(node.data, Math.max(leftMax, rightMax));
         return max;
     }
 }

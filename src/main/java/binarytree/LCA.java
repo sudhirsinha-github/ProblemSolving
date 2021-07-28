@@ -42,7 +42,9 @@ public class LCA {
 //        if (res != null) {
 //            System.out.println(res.data);
 //        }
-
+        int xx= 3 +'a';
+        char c = (char)xx;
+        System.out.println(c);
         System.out.println(countNodes(root));
 
     }
@@ -53,8 +55,7 @@ public class LCA {
 
         int res = 0;
         res = countNodes(root.left) + countNodes(root.right);
-        res++;
-        return res;
+        return 1 + res;
     }
 
 

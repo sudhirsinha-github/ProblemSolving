@@ -1,18 +1,54 @@
 package dynamicpg;
 
+import java.util.ArrayList;
+
 public class StringCombinations {
+    static ArrayList<String> permList = new ArrayList<>();
+
     public static void main(String[] args) {
 
-        permute("abc",0 , 2);
+        String text = "abc";
+        permute(text,0 , text.length()-1);
+
+        // bbbae
+        String fulltext = "ccccbaaaa";
+
+    //"abc"
+        //"ccccbbbbaaaa"
+        for (String stext:permList) {
+
+            if(searchSubString(fulltext, stext) == true){
+                System.out.println("matched!!");
+            }
+        }
+    }
+
+    static boolean searchSubString(String fulltext, String text) {
+        int m = fulltext.length();
+        int n = text.length();
+
+        for (int i = 0; i <= m - n; i++) //slider
+        {int j =0;
+            for ( ; j < n; j++) {
+                if (fulltext.charAt(i+j) != text.charAt(j)) { //both +j increases
+                    break;
+                }
+            }
+
+            if (j == n)
+                return true;
+        }
+
+        return false;
     }
 
 
     static void permute(String str, int startIndex, int endIndex)
     {
 
-        if(startIndex == endIndex)
-        {
+        if(startIndex == endIndex) {
             System.out.println(str);
+            permList.add(str);
         }
         else{
 

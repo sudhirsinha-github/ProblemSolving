@@ -1,4 +1,4 @@
-package tescologger;
+package adalogger;
 
 public abstract class AbstractLogger{
    public enum Level{

@@ -1,15 +1,24 @@
 package arrays;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class ConsucutiveLargestPair
 {
     public static void main(String[] args) {
-        int[] a ={4,1,2,0,7,0,1,5};
-        smallestSubWithSum();
-        Object o1 = 999;
-        Object o2 = 999;
-        System.out.println(o1.equals(o2));
+//        int[] a ={4,1,2,0,7,0,1,5};
+//        smallestSubWithSum();
+//        Object o1 = 999;
+//        Object o2 = 999;
+//        System.out.println(o1.equals(o2));
+
+        int[] array = {1, 2, 3};
+        long l = 0L;
+        for (int i = 0; i < 3; i++) {
+            l+= array[i];
+        }
+
+
     }
 
     private static void arrayWay(int[] a) {

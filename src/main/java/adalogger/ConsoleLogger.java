@@ -1,4 +1,4 @@
-package tescologger;
+package adalogger;
 
 import java.io.BufferedWriter;
 import java.io.File;

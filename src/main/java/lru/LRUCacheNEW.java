@@ -31,9 +31,19 @@ public class LRUCacheNEW {
 		if (!cache.contains(key)) {
 			put(key);
 		} else {
-			cache.remove(key);
+			cache.remove(key); //remove and add at last so order is maintained
 			cache.add(key);
 		}
+	}
+
+	public void put(int key) {
+		//size full?
+		if (cache.size() == capacity) {
+			int firstKey = cache.iterator().next();
+			cache.remove(firstKey); //always remove from front
+		}
+
+		cache.add(key);
 	}
 
 	// displays contents of cache in Reverse Order
@@ -47,16 +57,6 @@ public class LRUCacheNEW {
 
 		while (itr.hasNext())
 			System.out.print(itr.next() + " ");
-	}
-
-	public void put(int key) {
-
-		if (cache.size() == capacity) {
-			int firstKey = cache.iterator().next();
-			cache.remove(firstKey);
-		}
-
-		cache.add(key);
 	}
 
 	public static void main(String[] args) {

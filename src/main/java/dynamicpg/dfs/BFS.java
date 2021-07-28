@@ -28,7 +28,7 @@ public class BFS {
         // make parentVertex set visited true
         parentVertex.setVisited(true);
         while (!vertexQueue.isEmpty()) {
-            Vertex vertex = vertexQueue.remove();
+            Vertex vertex = vertexQueue.poll();
             System.out.print(vertex +"`");
 
             for (Vertex mychilds : parentVertex.getMyChild()) {

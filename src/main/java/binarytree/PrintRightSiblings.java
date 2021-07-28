@@ -41,6 +41,25 @@ public class PrintRightSiblings {
                 nodeQueue.add(tempNode.right);
         }
     }
+
+    private static Node getSiblings(Node root, int key) {
+        if (root.data == key || root == null) {
+            return null;
+        }
+
+        if (root.left != null && root.left.data == key) {
+            return root.right;
+        }
+
+        if (root.right != null && root.right.data == key) {
+            return root.left;
+        }
+
+        if (getSiblings(root.right, key) == null)
+            return getSiblings(root.right, key);
+        else
+            return getSiblings(root.left, key);
+    }
 }
 
  class Node {

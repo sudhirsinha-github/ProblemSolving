@@ -2,12 +2,13 @@ package mypool;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientException;
-import com.mongodb.MongoClientOptions;
 
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.TimeUnit;
+import org.awaitility.*;
 
 /**
  * Created by sudhirkumar on 4/10/17.
@@ -17,10 +18,6 @@ import java.util.concurrent.BlockingQueue;
     private static final int DEFAULT_POOL_SIZE = 5;
 
     private static BlockingQueue<MongoClient> blockingQueue ;
-
-    public synchronized int getAvailableConnections() {
-        return blockingQueue.size();
-    }
 
     public ConnectionPoolImpl(int size) {
         int MAX_SIZE = (size != 0) ? size : DEFAULT_POOL_SIZE;
@@ -39,37 +36,41 @@ import java.util.concurrent.BlockingQueue;
         }
     }
 
+    public synchronized int getAvailableConnections() {
+        return blockingQueue.size();
+    }
+
     @Override
     public MongoClient getConnection() throws InterruptedException {
         System.out.println("size before getting connection" + blockingQueue.size());
-        MongoClient con = null;
+        MongoClient mongoClient = null;
         if (getAvailableConnections() != 0) {
-            con = blockingQueue.take();
+            mongoClient = blockingQueue.take();
         } else {
             System.out.println("All resources under utilization ,Release old one !!!");
         }
 
-        System.out.println("size after getting connection" + blockingQueue.size());
+        System.out.println("size after getting connection" + getAvailableConnections());
 
-        return (con);
+        return mongoClient;
     }
 
     /** reuse released connection
      * */
     @Override
     public void releaseConnection(MongoClient client) throws InterruptedException{
-        System.out.println("size before releasing connection" + blockingQueue.size());
+        System.out.println("size before releasing connection" + getAvailableConnections());
 
         blockingQueue.put(client);
-        System.out.println("size after releasing connection" + blockingQueue.size());
+        System.out.println("size after releasing connection" + getAvailableConnections());
     }
 
     private MongoClient createConnection()
     {
         // this can be moved to dao package
         Config config = Config.getConfig();
-        return new MongoClient(config.HOST,
-                new MongoClientOptions.Builder().connectTimeout(config.TIMEOUT).build());
+        return new MongoClient(config.HOST);
+        // ,new MongoClientOptions.Builder().connectTimeout(config.TIMEOUT).build());
     }
 
     @Override
@@ -86,11 +87,11 @@ import java.util.concurrent.BlockingQueue;
     }
 }
 
-class Main{
+class Main {
 
-    public static void main(String[] args) throws InterruptedException,IOException {
-        ConnectionPoolFactory factory = new ConnectionPoolFactory();
-        ConnectionPool pool = factory.getConnectionPool(4);
+    public static void main(String[] args) throws InterruptedException, IOException {
+//        ConnectionPoolFactory factory = new ConnectionPoolFactory();
+        ConnectionPool pool = new ConnectionPoolImpl(4);
 
         MongoClient client1 = null;
         MongoClient client2 = null;
@@ -99,21 +100,23 @@ class Main{
         MongoClient client5 = null;
 
 
+        client1 = pool.getConnection(); // code to interface always
+        client2 = pool.getConnection();
+//        Thread.sleep(5000L);
+        Awaitility a = new Awaitility();
+        a.await().atLeast(Duration.FIVE_SECONDS);
 
-            client1 = pool.getConnection();
-            client2 = pool.getConnection();
-            Thread.sleep(4567890987L);
-            client3 = pool.getConnection();
-            client4 = pool.getConnection();
-            System.out.println(pool.getAvailableConnections());
-            //client5 = pool.getConnection();
-            pool.releaseConnection(client1);
-            pool.releaseConnection(client2);
-            pool.releaseConnection(client3);
-            pool.releaseConnection(client4);
-            System.out.println(pool.getAvailableConnections());
+        client3 = pool.getConnection();
+        client4 = pool.getConnection();
+        System.out.println(pool.getAvailableConnections());
+        //client5 = pool.getConnection();
+        pool.releaseConnection(client1);
+        pool.releaseConnection(client2);
+        pool.releaseConnection(client3);
+        pool.releaseConnection(client4);
+        System.out.println(pool.getAvailableConnections());
 
-           // pool.close();
+        // pool.close();
 /*
 
         Scanner s = new Scanner(System.in);

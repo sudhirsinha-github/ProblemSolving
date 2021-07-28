@@ -1,4 +1,4 @@
-package tescologger;
+package adalogger;
 
 import org.junit.Assert;
 import org.junit.Before;
